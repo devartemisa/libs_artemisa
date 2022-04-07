@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    [sibwp_form id=2]
+
+    <!-- Botones de Scroll -->
+<SCript>
+jQuery(document).ready(function($){ 
+  const superiorTitles = document.querySelectorAll('.superior-title');
+  const lowerTitles = document.querySelectorAll('.lower-title');
+  const scrollUp = document.querySelector('#scrollUp');
+  const scrollDown = document.querySelector('#scrollDown');
+
+  const observer = new IntersectionObserver((entradas, observador) => {
+			entradas.forEach(entrada => {
+          if(entrada.isIntersecting){
+            if (entrada.target.id === 'superior') {
+              scrollUp.classList.remove('active');
+              scrollDown.classList.add('active');
+            }
+            if (entrada.target.id === 'lower') {
+              scrollDown.classList.remove('active');
+              scrollUp.classList.add('active');
+            }
+            
+          }
+      });
+  }, {
+      threshold: 1,
+      rootMargin: '0px'
+
+  });
+  
+  superiorTitles.forEach(superiorTitle => {
+      observer.observe(superiorTitle);
+  });
+
+  lowerTitles.forEach(lowerTitle => {
+      observer.observe(lowerTitle);
+  });
+
+});
+</SCript>
+
+</body>
+</html>

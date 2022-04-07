@@ -1,0 +1,72 @@
+/*Página Preguntas Frecuentes. Sección Acordeón*/
+
+/* Hace que el icono del conmutador no se oculte */
+.divicon_accordeon .et_pb_toggle_open .et_pb_toggle_title:before {
+    display: block !important;
+    content: "";
+    }
+    
+    /* Cambia el icono del conmutador o pestaña cuando este cerrado */
+    .divicon_accordeon .et_pb_toggle .et_pb_toggle_title:before,.et_pb_toggle .et_pb_toggle_title:before {
+        content:'33';
+    }
+    
+    /* Cambia el icono del conmutador o pestaña cuando este abierto */
+    .divicon_accordeon .et_pb_toggle_open .et_pb_toggle_title:before{
+         content:'32';   
+    }
+    
+    /*Color de links*/
+    a{
+        text-decoration: none;
+        color: #121213;
+    }
+    
+    a:hover{
+        color: #f2e11f; 
+    }
+    
+    .link {
+        text-decoration: none;
+        color: #ffffff;
+    }
+    
+    .link:hover{
+        color: #f2e11f; 
+    } /*Página Preguntas Frecuentes. Sección Acordeón*/
+    
+    /* Hace que el icono del conmutador no se oculte */
+    .divicon_accordeon .et_pb_toggle_open .et_pb_toggle_title:before {
+    display: block !important;
+    content: "";
+    }
+    
+    /* Cambia el icono del conmutador o pestaña cuando este cerrado */
+    .divicon_accordeon .et_pb_toggle .et_pb_toggle_title:before,.et_pb_toggle .et_pb_toggle_title:before {
+        content:'\33';
+    }
+    
+    /* Cambia el icono del conmutador o pestaña cuando este abierto */
+    .divicon_accordeon .et_pb_toggle_open .et_pb_toggle_title:before{
+         content:'\32';   
+    }
+    
+    /*Color de links*/
+    a{
+        text-decoration: none;
+        color: #121213;
+    }
+    
+    a:hover{
+        color: #f2e11f; 
+    }
+    
+    .link {
+        text-decoration: none;
+        color: #ffffff;
+    }
+    
+    .link:hover{
+        color: #f2e11f; 
+    }
+    

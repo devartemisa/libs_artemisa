@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- seccion de Beneficios -->
+    <script>
+        jQuery(document).ready(function($){
+          const tab = document.querySelectorAll('.tab');
+          const benef = document.querySelectorAll('.benef');
+    
+          console.log(tab);
+          console.log(benef);
+        
+          tab.forEach( ( cadaTab , i) => {
+    
+        tab[i].addEventListener('click', () => {
+    
+          tab.forEach(( cadaTab , i) => {
+            tab[i].classList.remove('active');
+            benef[i].classList.remove('active');
+            console.log('borrados');
+          });
+    
+          tab[i].classList.add('active');
+          benef[i].classList.add('active');
+          console.log('activados');
+    
+        });
+    
+      });
+        
+        });
+    
+    </script>
+
+</body>
+</html>
