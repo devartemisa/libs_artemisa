@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+                                                                  <!-- Alinear Titulo de beneficios-->  
+<script>
+    jQuery(document).ready(function($){ 
+      var alSection1 = $('.alignment');
+        alSection1.wrapAll('<div class="alignment_container"/>');
+    
+      var alSection2 = $('.alignment2');
+        alSection2.wrapAll('<div class="alignment_absolute"/>');
+    });
+</script>
+
+                                                                           <!-- Beneficios version Escritorio -->
+<script>
+    jQuery(document).ready(function($){  
+    
+      gsap.registerPlugin(ScrollTrigger);
+      let sections = gsap.utils.toArray(".beneficio");
+    
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".contenedor-horizontal",
+        pin: true,
+        start: "top top",
+        scrub: 1,
+        snap: false,
+        end: () => "+=" + document.querySelector(".contenedor-horizontal").offsetWidth
+      }
+    });
+    
+      //*************************-----TABS---*************************
+      let pos1 = $('.pin-spacer').position();
+    let ben1 = pos1.top;
+    const box = document.querySelector('div.pin-spacer');
+    const rect = box.getBoundingClientRect().width;
+    let part = rect / 3;
+    let chang = part / 2;
+    let ben2 = ben1 + part;
+    let ben3 = ben2 + part;
+    let ben4 = ben3 + part;
+    let chang0 = ben1 - chang;
+    let chang1 = ben1 + chang;
+    let chang2 = ben2 + chang;
+    let chang3 = ben3 + chang;
+    let chang4 = ben4 + chang;
+    
+    
+    
+    document.querySelector('#min1').addEventListener('click', function(e) {
+      scrollTo(0,ben1);
+    })
+    document.querySelector('#min2').addEventListener('click', function(e) {
+      scrollTo(0,ben2);
+    })
+    document.querySelector('#min3').addEventListener('click', function(e) {
+      scrollTo(0,ben3);
+    })
+    document.querySelector('#min4').addEventListener('click', function(e) {
+      scrollTo(0,ben4);
+    })
+    
+    //-------------------------chang CON SCROLL
+    $(window).scroll(function(){
+      var scroll = jQuery(window).scrollTop();
+      if (scroll >= chang0 && scroll <= chang1) {
+        $("#min1").addClass("opac");
+      }else{
+        $("#min1").removeClass("opac");
+      }
+      //-------------------------------------------------
+      if (scroll > chang1 && scroll <= chang2) {
+        $("#min2").addClass("opac");
+      }else{
+        $("#min2").removeClass("opac");  	
+      }
+      //-------------------------------------------------
+      if (scroll > chang2 && scroll <= chang3) {
+        $("#min3").addClass("opac");
+      }else{
+        $("#min3").removeClass("opac");
+      }
+      //-------------------------------------------------
+      if (scroll > chang3 && scroll <= chang4) {
+        $("#min4").addClass("opac");
+      }else{
+        $("#min4").removeClass("opac");
+      }
+    });
+      
+      
+      
+    });
+    
+</script>
+
+                                                                        <!-- Beneficios version Movil -->
+<script>
+        jQuery(document).ready(function($){
+          const tab = document.querySelectorAll('.tab');
+          const benef = document.querySelectorAll('.benef');
+    
+        
+          tab.forEach( ( cadaTab , i) => {
+    
+        tab[i].addEventListener('click', () => {
+    
+          tab.forEach(( cadaTab , i) => {
+            tab[i].classList.remove('activeOp');
+            benef[i].classList.remove('activeOp');
+          });
+    
+          tab[i].classList.add('activeOp');
+          benef[i].classList.add('activeOp');
+        });
+        });  
+        });
+</script>
+
+<!-- CARRUSEL DE TESTIMONIOS -->
+<script>
+    jQuery(function($){
+         $('.testimonios').slick({
+           dots: true,
+         });
+    });
+</script>
+
+                                                                                  <!-- CARRUSEL DE CLIENTES -->
+<script>
+    $(document).ready(function() {
+    jQuery(function($){
+    $('.clients_carrusel').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 900,
+    arrows: false,
+    dots: false,
+    pauseOnHover: true,
+    responsive: [{
+    breakpoint: 1079,
+    settings: {
+    slidesToShow: 3
+    }
+    }]
+    });
+    });
+    });
+</script>
+
+
+                                                                                <!-- Servicios PC version completa -->
+<script>
+    jQuery(document).ready(function( $ ) {
+    
+      
+        var $textPrincipal= document.getElementById("text").innerHTML;
+      
+        //********************SERVICIOS REDUCCION
+        document.querySelector('#rowServices').addEventListener('mouseenter', function(e) {
+          $(".servicio").addClass("reducir");
+        })
+    
+        document.querySelector('#rowServices').addEventListener('mouseleave', function(e) {
+            document.getElementById("texto").innerHTML = $textPrincipal;
+            $(".servicio").removeClass("reducir");
+          })
+          
+        //********************SERVICIO 1
+        document.querySelector('#service1').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">SI TU NEGOCIO</p><p style="text-align: center;">NO ESTÁ EN REDES,</p><p style="text-align: center;">ENTONCE NO EXISTE</p></div>';
+        })
+        
+        //********************SERVICIO 2
+        document.querySelector('#service2').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">EL DISEÑO</p><p style="text-align: center;">PERSONALIZADO ES</p><p style="text-align: center;">NUESTRA</p><p style="text-align: center;">ESPECIALIDAD</p></div>';
+        })
+        
+        //********************SERVICIO 3
+        document.querySelector('#service3').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">AQUÍ CREAMOS</p><p style="text-align: center;">LA WEB</p><p style="text-align: center;">DE TUS SUEÑOS</p></div>';
+        })
+      
+      
+      });
+</script>
+
+
+                                                                                      <!-- Servicios PC version recortada -->
+<script>
+    jQuery(document).ready(function( $ ) {
+    
+      
+        var $textPrincipal= document.getElementById("text").innerHTML;
+      
+        //********************SERVICIOS REDUCCION
+        document.querySelector('#rowServices').addEventListener('mouseenter', function(e) {
+          $(".servicio").addClass("reducir");
+        })
+    
+        document.querySelector('#rowServices').addEventListener('mouseleave', function(e) {
+            document.getElementById("texto").innerHTML = $textPrincipal;
+            $(".servicio").removeClass("reducir");
+          })
+          
+        //********************SERVICIO 1
+        document.querySelector('#service1').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">SI TU NEGOCIO</p><p style="text-align: center;">NO ESTÁ EN REDES,</p><p style="text-align: center;">ENTONCE NO EXISTE</p></div>';
+        })
+        
+        //********************SERVICIO 2
+        document.querySelector('#service2').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">EL DISEÑO</p><p style="text-align: center;">PERSONALIZADO ES</p><p style="text-align: center;">NUESTRA</p><p style="text-align: center;">ESPECIALIDAD</p></div>';
+        })
+        
+        //********************SERVICIO 3
+        document.querySelector('#service3').addEventListener('mouseenter', function(e) {
+          document.getElementById("text").innerHTML = '<div class="et_pb_text_inner"><p style="text-align: center;">AQUÍ CREAMOS</p><p style="text-align: center;">LA WEB</p><p style="text-align: center;">DE TUS SUEÑOS</p></div>';
+        })
+      
+      
+      });
+</script>
+
+</body>
+</html>

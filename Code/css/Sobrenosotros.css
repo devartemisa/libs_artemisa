@@ -1,0 +1,20 @@
+.active{
+    opacity: 1 !important;
+  }
+  .tab{
+    opacity: .3
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 980px){
+    .tab img{
+      max-height: 30px !important;
+    }
+    
+    .tab{
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .benef{
+      gap: 20px !important;
+    }
+  }
