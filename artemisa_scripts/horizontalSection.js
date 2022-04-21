@@ -1,4 +1,11 @@
-jQuery(document).ready(function($){  
+jQuery(document).ready(function($){
+
+    /*ALINEACION DE CARTAS*/
+    var alSection1 = $('.alignment');
+    alSection1.wrapAll('<div class="alignment_container"/>');
+    /*ALINEACION DE TITULO BENEFICIOS*/
+	var alSection2 = $('.alignment2');
+    alSection2.wrapAll('<div class="alignment_absolute"/>');
 
     gsap.registerPlugin(ScrollTrigger);
     let sections = gsap.utils.toArray(".beneficio");
