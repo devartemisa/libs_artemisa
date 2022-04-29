@@ -1,11 +1,5 @@
-jQuery(document).ready(function($){
-
-    /*ALINEACION DE CARTAS*/
-    var alSection1 = $('.alignment');
-    alSection1.wrapAll('<div class="alignment_container"/>');
-    /*ALINEACION DE TITULO BENEFICIOS*/
-	var alSection2 = $('.alignment2');
-    alSection2.wrapAll('<div class="alignment_absolute"/>');
+function horizontalSection(){
+    console.log("horizontalSection CARGADO");
 
     gsap.registerPlugin(ScrollTrigger);
     let sections = gsap.utils.toArray(".beneficio");
@@ -38,7 +32,6 @@ jQuery(document).ready(function($){
     let chang2 = ben2 + chang;
     let chang3 = ben3 + chang;
     let chang4 = ben4 + chang;
-
 
 
     document.querySelector('#min1').addEventListener('click', function(e) {
@@ -81,8 +74,4 @@ jQuery(document).ready(function($){
             $("#min4").removeClass("opac");
         }
     });
-  
-  
-  
-});
-  
+};
