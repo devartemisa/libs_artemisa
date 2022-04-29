@@ -1,1 +1,3 @@
-//Información de prueba comentada
+$(document).ready(function() {
+    
+});

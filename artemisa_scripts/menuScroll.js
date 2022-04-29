@@ -1,4 +1,6 @@
-jQuery(document).ready(function( $ ) {
+function menuScroll(){
+    console.log("menuScroll CARGADO");
+
     $(window).scroll(function(){
         var scroll = jQuery(window).scrollTop();
         if (scroll >= 100) {
@@ -12,4 +14,4 @@ jQuery(document).ready(function( $ ) {
             $("#img-logo").removeClass("cambiar-logo");
         }
     });
-});
+};
